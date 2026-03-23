@@ -38,7 +38,7 @@ interface OgData {
   siteName: string;
 }
 
-// Configuración de sitios - agrega más sitios aquí
+// agregar más sitios aquí
 const SITES: Record<string, SiteConfig> = {
   'asajoyeria.com': {
     apiDomain: 'https://be.asajoyeria.com/',
@@ -140,7 +140,7 @@ app.use('/', async (req: Request, res: Response) => {
 
   const path = req.path;
 
-  // Detectar si es una página con producto (ej: /menu/cadenas/colombian-almeja-blue-2202)
+  // Detectar si es una página con producto /menu/cadenas/colombian-almeja-blue-2202
   // El ID del producto es el último número del slug
   const productId = extractProductId(path.split('/').pop() || '');
 
