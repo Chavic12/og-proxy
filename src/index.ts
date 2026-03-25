@@ -26,6 +26,8 @@ app.use('/', async (req: Request, res: Response) => {
 
   const path = req.path;
 
+  const query = req.originalUrl.split('?')[1] || '';
+
   // producto
   const productHtml = await handleProduct(path, site);
   if (productHtml) {
@@ -33,17 +35,17 @@ app.use('/', async (req: Request, res: Response) => {
     return;
   }
 
+  // marca (?brand=3) - antes de categoría porque la URL puede ser /menu/todos?brand=3
+  const brandHtml = await handleBrand(path, query, site);
+  if (brandHtml) {
+    res.status(200).send(brandHtml);
+    return;
+  }
+
   // categoría
   const categoryHtml = await handleCategory(path, site);
   if (categoryHtml) {
     res.status(200).send(categoryHtml);
-    return;
-  }
-
-  // marca (?brand=3)
-  const brandHtml = await handleBrand(path, req.originalUrl.split('?')[1] || '', site);
-  if (brandHtml) {
-    res.status(200).send(brandHtml);
     return;
   }
 
