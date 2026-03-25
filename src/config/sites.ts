@@ -49,4 +49,16 @@ export const SITES: Record<string, SiteConfig> = {
     defaultImage: 'https://tatoswings.hn/logo.webp',
     targetUrl: 'https://tatoswings.hn',
   },
+  'shopmukacafe.com': {
+    apiDomain: 'https://cs-market.albatrosvirtual.com:93/',
+    s3Url: 'https://mukacafefiles.s3.us-east-2.amazonaws.com/folder',
+    providerId: 1,
+    prefixLength: 9,
+    suffixLength: 10,
+    priceList: 'MIN-PD',
+    siteName: 'Muka Café',
+    defaultDescription: 'Pide en nuestra web!. Paga fácil con tarjeta o en efectivo.',
+    defaultImage: 'https://shopmukacafe.com/logo.webp',
+    targetUrl: 'https://shopmukacafe.com',
+  },
 };
