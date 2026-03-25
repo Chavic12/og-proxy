@@ -3,6 +3,7 @@ import { SITES } from './config/sites';
 import { isCrawler } from './utils/crawler';
 import { handleProduct } from './handlers/product';
 import { handleCategory } from './handlers/category';
+import { handleBrand } from './handlers/brand';
 import { handleGeneric } from './handlers/generic';
 
 const app = express();
@@ -39,7 +40,13 @@ app.use('/', async (req: Request, res: Response) => {
     return;
   }
 
- 
+  // marca (?brand=3)
+  const brandHtml = await handleBrand(path, req.originalUrl.split('?')[1] || '', site);
+  if (brandHtml) {
+    res.status(200).send(brandHtml);
+    return;
+  }
+
   res.status(200).send(handleGeneric(path, site));
 });
 

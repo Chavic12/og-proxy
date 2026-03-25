@@ -5,7 +5,6 @@ export interface SiteConfig {
   prefixLength: number;
   suffixLength: number;
   priceList: string;
-  officeCode: string;
   siteName: string;
   defaultDescription: string;
   defaultImage: string;
@@ -32,6 +31,12 @@ export interface CategoryResponse {
   name: string;
   metatitle?: string | null;
   metadescription?: string | null;
+}
+
+export interface BrandResponse {
+  id: number;
+  name: string;
+  image?: string | null;
 }
 
 export interface OgData {

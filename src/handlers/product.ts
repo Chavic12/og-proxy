@@ -10,7 +10,7 @@ export async function handleProduct(path: string, site: SiteConfig): Promise<str
 
   try {
     const code = buildProductCode(site, productId);
-    const apiUrl = `${site.apiDomain}api/em/material/get/${code}/${site.priceList}/${site.officeCode}`;
+    const apiUrl = `${site.apiDomain}api/em/material/get/${code}/${site.priceList}/0`;
     const response = await axios.get<ProductResponse[]>(apiUrl, { timeout: 5000 });
     const product = Array.isArray(response.data) ? response.data[0] : response.data;
 
