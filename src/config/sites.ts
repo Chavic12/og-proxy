@@ -34,7 +34,7 @@ export const SITES: Record<string, SiteConfig> = {
     priceList: 'PD',
     siteName: 'KCareBeauty',
     defaultDescription: 'Pide en nuestra web, San Pedro y La Ceiba. Paga fácil con tarjeta o en efectivo. Disfruta con tu familia y amigos de nuestros productos.',
-    defaultImage: 'https://kcarebeautyhn.com/logo.webp',
+    defaultImage: 'https://kcarebeautyhn.com/logo.png',
     targetUrl: 'https://kcarebeautyhn.com',
   },
   'tatoswings.hn': {
