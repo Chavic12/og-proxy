@@ -27,6 +27,8 @@ export async function handleProduct(path: string, site: SiteConfig): Promise<str
       title: escapeHtml(product.metatitle || `${product.name} | ${site.siteName}`),
       description: escapeHtml(product.metadescription || product.description || site.defaultDescription),
       image,
+      imageWidth: imageName ? '500' : undefined,
+      imageHeight: imageName ? '500' : undefined,
       url: `${site.targetUrl}${path}`,
       siteName: escapeHtml(site.siteName),
     });

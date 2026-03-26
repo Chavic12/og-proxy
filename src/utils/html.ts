@@ -9,7 +9,11 @@ export function escapeHtml(str: string): string {
     .replace(/>/g, '&gt;');
 }
 
-export function buildOgHtml({ title, description, image, url, siteName }: OgData): string {
+export function buildOgHtml({ title, description, image, imageWidth, imageHeight, url, siteName }: OgData): string {
+  const imageMeta = imageWidth && imageHeight
+    ? `\n  <meta property="og:image:width" content="${imageWidth}" />\n  <meta property="og:image:height" content="${imageHeight}" />`
+    : '';
+
   return `<!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +21,7 @@ export function buildOgHtml({ title, description, image, url, siteName }: OgData
   <title>${title}</title>
   <meta property="og:title" content="${title}" />
   <meta property="og:description" content="${description}" />
-  <meta property="og:image" content="${image}" />
+  <meta property="og:image" content="${image}" />${imageMeta}
   <meta property="og:url" content="${url}" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="${siteName}" />

@@ -43,6 +43,8 @@ export interface OgData {
   title: string;
   description: string;
   image: string;
+  imageWidth?: string;
+  imageHeight?: string;
   url: string;
   siteName: string;
 }
