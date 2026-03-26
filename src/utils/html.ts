@@ -28,7 +28,7 @@ export function buildOgHtml({ title, description, image, imageWidth, imageHeight
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="${title}" />
   <meta name="twitter:description" content="${description}" />
-  <meta name="twitter:image" content="${image}" />
+  <meta name="twitter:image" content="https://kcarebeautyhn.com/logo.webp" />
 </head>
 <body></body>
 </html>`;
