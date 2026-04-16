@@ -61,4 +61,16 @@ export const SITES: Record<string, SiteConfig> = {
     defaultImage: 'https://shopmukacafe.com/logo.webp',
     targetUrl: 'https://shopmukacafe.com',
   },
+  'arbeautyhn.com': {
+    apiDomain: 'https://market-pos.albatrosvirtual.com:83/',
+    s3Url: 'https://arbeautyhnfiles.s3.eu-central-1.amazonaws.com/folder',
+    providerId: 1,
+    prefixLength: 9,
+    suffixLength: 10,
+    priceList: '5696-PD',
+    siteName: 'Arbeauty',
+    defaultDescription: 'Tienda de Skincare Coreano & Japones Original en Honduras.',
+    defaultImage: 'https://arbeautyhn.com/logo.webp',
+    targetUrl: 'https://arbeautyhn.com',
+  },
 };
