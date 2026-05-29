@@ -73,4 +73,16 @@ export const SITES: Record<string, SiteConfig> = {
     defaultImage: 'https://arbeautyhn.com/logo.webp',
     targetUrl: 'https://arbeautyhn.com',
   },
+  'lira.hn': {
+    apiDomain: 'https://cs-mp.albatrosvirtual.com:92/',
+    s3Url: 'https://lirahnfiles.s3.us-east-2.amazonaws.com/folder',
+    providerId: 1,
+    prefixLength: 4, // -->  0001
+    suffixLength: 15, // -> 000000000002202  --> 0001-000000000002202
+    priceList: 'PD',
+    siteName: 'Lira',
+    defaultDescription: 'Pide en nuestra web o en nuestra app. Disfruta de gran variedad de productos.',
+    defaultImage: 'https://lira.hn/logo.webp',
+    targetUrl: 'https://lira.hn',
+  },
 };

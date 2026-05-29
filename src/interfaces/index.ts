@@ -39,6 +39,12 @@ export interface BrandResponse {
   image?: string | null;
 }
 
+export interface AgencyResponse {
+  id: number;
+  name: string;
+  image?: string | null;
+}
+
 export interface OgData {
   title: string;
   description: string;

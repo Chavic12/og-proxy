@@ -4,6 +4,7 @@ import { isCrawler } from './utils/crawler';
 import { handleProduct } from './handlers/product';
 import { handleCategory } from './handlers/category';
 import { handleBrand } from './handlers/brand';
+import { handleAgency } from './handlers/agency';
 import { handleGeneric } from './handlers/generic';
 
 const app = express();
@@ -27,6 +28,13 @@ app.use('/', async (req: Request, res: Response) => {
   const path = req.path;
 
   const query = req.originalUrl.split('?')[1] || '';
+
+  // agencia (/agencias/16/productos) - antes de producto porque /agencias/16 matchearía como producto
+  const agencyHtml = await handleAgency(path, site);
+  if (agencyHtml) {
+    res.status(200).send(agencyHtml);
+    return;
+  }
 
   // producto
   const productHtml = await handleProduct(path, site);
